@@ -1,6 +1,6 @@
 import requests
 
-f = open("AWLRaw.txt", "r")
+f = open("formatAWL/AWLRaw.txt", "r")
 awl = f.read()
 awl = awl.split('\n')
 awl.pop(-1)
