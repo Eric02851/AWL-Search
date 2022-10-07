@@ -15,7 +15,7 @@ const main = () => {
         for (let j of awl[i].pastTense) lookupDict[j] = true
     }
 
-    let paper = document.getElementById("paper").value.trim()
+    let paper = document.getElementById("paper").value.trim().toLowerCase()
     paper = paper.replace(/[^A-Za-z\s]/g, '')
     paper = paper.split(/\s+/)
 
