@@ -17,13 +17,22 @@ const main = () => {
 
     let paper = document.getElementById("paper").value.trim()
     paper = paper.replace(/[^A-Za-z\s]/g, '')
-    paper = paper.split(/\s+/);
+    paper = paper.split(/\s+/)
 
     let wordsFound = []
     for (let i of paper)
         if (lookupDict[i]) wordsFound.push(i)
+    wordsFound = Array.from(new Set(wordsFound))
 
-    console.log(Array.from(new Set(wordsFound)))
+    let wordStr = ""
+    for (let i of wordsFound)
+        wordStr += i + ', '
+
+    wordStr = wordStr.slice(0, wordStr.length - 2)
+    wordStr += ` (${wordsFound.length})`
+    document.getElementById("wordsFound").textContent = wordStr
+
+    console.log(wordsFound)
 }
 
 document.querySelector('input[type="button"]').addEventListener('click', main)
