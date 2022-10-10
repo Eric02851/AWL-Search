@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="module" src="main.js"></script>
     <title>AWL Search</title>
+    <script type="module" src="main.js"></script>
 </head>
 <body style="zoom:120%">
 	<label>Sublists:</label>
@@ -17,11 +17,13 @@
     <label>, 9:</label> <input type="checkbox" value=8>
     <label>, 10:</label> <input type="checkbox" value=9><br>
 
-    <input type="button" value="Search Paper"/><br>
-    <label>Words Found: </label>
+    <input id="selectButton" type="button" value="Select All"/>
+    <input id="deselectButton" type="button" value="Deselect All"/><br><br>
+
+    <label>Words Found<span id="wordCount"></span>: </label>
     <p style="display:inline" id="wordsFound"></p><br>
 
-    <label>Enter Paper: </label><br>
-    <textarea id="paper" rows="40" cols="90"></textarea>
+    <input id="searchButton" type="button" value="Search Paper"/><br>
+    <textarea id="paper" rows="40" cols="90" spellcheck="false"></textarea>
 </body>
 </html>
